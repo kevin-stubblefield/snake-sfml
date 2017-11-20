@@ -1,16 +1,16 @@
 // Serves as entry point for the game and a holder for the window
 
 #include <SFML\Graphics.hpp>
-#include "Block.h"
+#include "Player.h"
 
 int main() {
-	sf::RenderWindow window(sf::VideoMode(512.0f, 512.0f), "Snake");
+	sf::RenderWindow window(sf::VideoMode(512, 512), "Snake");
 	sf::Clock clock;
 
 	sf::Texture texture;
 	texture.loadFromFile("block.png");
 
-	Block block(texture);
+	Player player(texture);
 	
 	while (window.isOpen()) {
 		float deltaTime = clock.restart().asSeconds();
@@ -24,10 +24,10 @@ int main() {
 			}
 		}
 
-		block.Update(deltaTime);
+		player.Update(deltaTime);
 
 		window.clear(sf::Color(236, 221, 180));
-		block.Draw(window);
+		player.Draw(window);
 		window.display();
 	}
 }

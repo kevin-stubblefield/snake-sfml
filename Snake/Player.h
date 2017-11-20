@@ -1,11 +1,11 @@
 #pragma once
 #include <SFML\Graphics.hpp>
 
-class Block
+class Player
 {
 public:
-	Block(sf::Texture& texture);
-	~Block();
+	Player(sf::Texture& texture);
+	~Player();
 
 	void Update(float deltaTime);
 	void Draw(sf::RenderWindow& window);
